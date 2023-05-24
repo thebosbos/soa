@@ -1,0 +1,39 @@
+    Required modules:
+        express: Express.js framework for building the server.
+        ApolloServer: Apollo Server for GraphQL implementation.
+        expressMiddleware: Middleware for Apollo Server with Express.js.
+        body-parser: Middleware to parse the request body.
+        cors: Middleware for handling Cross-Origin Resource Sharing (CORS).
+        grpc: gRPC library for creating gRPC clients and servers.
+        protoLoader: Utility to load Protocol Buffer definitions.
+
+    Loading Proto files:
+        The code loads two proto files: jean.proto and shirt.proto using protoLoader.
+
+    Creating gRPC clients:
+        The code creates two gRPC client instances: clientjeans and clientshirts for jeanService and shirtService, respectively.
+        The clients are initialized with the host and port for the respective gRPC services.
+
+    Creating an Apollo Server:
+        The code creates an Apollo Server instance with imported type definitions (typeDefs) and resolvers (resolvers).
+
+    Applying Apollo Server middleware:
+        The Apollo Server middleware is applied to the Express application using expressMiddleware.
+
+    Express routes:
+        The code defines several Express routes for handling RESTful API requests:
+            GET /jeans: Fetches jeans using the jeanService gRPC client.
+            POST /jean: Creates a new jean using the jeanService gRPC client.
+            DELETE /jeans/:id: Deletes a jean using the jeanService gRPC client.
+            GET /jeans/:id: Retrieves a jean by ID using the jeanService gRPC client.
+            GET /shirts: Fetches shirts using the shirtService gRPC client.
+            POST /shirt: Creates a new shirt using the shirtService gRPC client.
+            DELETE /shirt/:id: Deletes a shirt using the shirtService gRPC client.
+            GET /shirts/:id: Retrieves a shirt by ID using the shirtService gRPC client.
+
+    
+    Starting the server:
+        The Express application is started and listens on port 3000.
+
+Please note that the provided code assumes the presence of the required dependencies, such as the proto files (jean.proto and shirt.proto),
+resolvers, and schema. Make sure you have those files available or modify the code accordingly.
