@@ -1,0 +1,53 @@
+syntax = "proto3";
+package jean;
+// Définition du message jean
+message jean {
+string id = 1;
+string title = 2;
+string description = 3;
+string prix = 4;
+// Ajouter d'autres champs de données pour les films au besoin
+}
+// Définition des messages de requête et de réponse pour les méthodes d
+message GetjeanRequest {
+string jean_id = 1;
+}
+message GetjeanResponse {
+jean jean = 1;
+}
+message SearchjeansRequest {
+string query = 1;
+}
+message SearchjeansResponse {
+repeated jean jeans = 1;
+}
+message CreatejeanRequest {
+    string title = 1;
+    string description = 2;
+    string prix = 3;
+  }
+  
+  message CreatejeanResponse {
+    jean jean = 1;
+  }
+
+message DeletejeanRequest {
+  string jean_id = 1;
+}
+
+message DeletejeanResponse {
+  // Define the response message if needed
+}
+
+  
+
+
+// Définition du service de films
+service jeanService {
+    rpc Getjean(GetjeanRequest) returns (GetjeanResponse);
+    rpc Searchjeans(SearchjeansRequest) returns (SearchjeansResponse);
+    rpc Createjean(CreatejeanRequest) returns (CreatejeanResponse);
+    rpc Deletejean(DeletejeanRequest) returns (DeletejeanResponse);
+
+// Ajouter d'autres méthodes au besoin
+}

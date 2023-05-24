@@ -1,0 +1,47 @@
+syntax = "proto3";
+package shirt;
+// Définition du message TV show
+message shirt {
+string id = 1;
+string title = 2;
+string description = 3;
+// Ajouter d'autres champs de données pour les séries TV au besoin
+}
+// Définition des messages de requête et de réponse pour les méthodes 
+message GetshirtRequest {
+string shirt_id = 1;
+}
+message GetshirtResponse {
+shirt shi_rt = 1;
+}
+message SearchshirtsRequest {
+string query = 1;
+}
+message SearchshirtsResponse {
+repeated shirt shi_rts = 1;
+}
+message CreateshirtRequest {
+    string title = 1;
+    string description = 2;
+  }
+  
+  message CreateshirtResponse {
+    shirt shi_rt = 1;
+  }
+message DeleteshirtRequest {
+  string shi_rt = 1;
+}
+
+message DeleteshirtResponse {
+  // Define the response message if needed
+}
+
+// Définition du service de séries TV
+service shirtService {
+rpc Getshirt(GetshirtRequest) returns (GetshirtResponse);
+rpc Searchshirts(SearchshirtsRequest) returns (SearchshirtsResponse);
+rpc Createshirt(CreateshirtRequest) returns (CreateshirtResponse);
+rpc Deleteshirt(DeleteshirtRequest) returns (DeleteshirtResponse);
+
+// Ajouter d'autres méthodes au besoin
+}
