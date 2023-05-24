@@ -39,28 +39,3 @@ Please note that the provided code assumes the presence of the required dependen
 resolvers, and schema. Make sure you have those files available or modify the code accordingly.
 
 
-The server will start running on port 3000.
-
-### Endpoints
-
-- `GET /jeans`: Fetches jeans using the `jeanService` gRPC client.
-- `POST /jean`: Creates a new jean using the `jeanService` gRPC client.
-- `DELETE /jeans/:id`: Deletes a jean using the `jeanService` gRPC client.
-- `GET /jeans/:id`: Retrieves a jean by ID using the `jeanService` gRPC client.
-- `GET /shirts`: Fetches shirts using the `shirtService` gRPC client.
-- `POST /shirt`: Creates a new shirt using the `shirtService` gRPC client.
-- `DELETE /shirt/:id`: Deletes a shirt using the `shirtService` gRPC client.
-- `GET /shirts/:id`: Retrieves a shirt by ID using the `shirtService` gRPC client.
-
-### Swagger Documentation
-
-Swagger documentation is available for the API Gateway. You can access it at [http://localhost:3000/api-docs](http://localhost:3000/api-docs).
-
-### Contributing
-
-Contributions are welcome! Please follow the guidelines in the [CONTRIBUTING.md](CONTRIBUTING.md) file.
-
-### License
-
-This project is licensed under the [MIT License](LICENSE).
-
